@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using APBD3.DAL;
@@ -15,7 +16,7 @@ namespace APBD3.Controllers
     {
         private readonly IDbService _dbService;
 
-        public StudentsController(IDbService dbService)
+       public StudentsController(IDbService dbService)
         {
             _dbService = dbService;
         }
@@ -27,22 +28,15 @@ namespace APBD3.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult getStudent(int id)
+        public IActionResult getStudent(string id)
         {
-            if (id == 0)
-            {
-                return Ok("kebab");
-            }
-            else
-            {
-                return NotFound("nie ma kebaba");
-            }
+            return Ok(_dbService.GetStudent(id));
         }
 
         [HttpPost]
         public IActionResult addStudent(Student student)
         {
-            student.IndexNumber = $"{new Random().Next(1, 2000)}";
+            //student.IndexNumber = $"{new Random().Next(1, 2000)}";
             return Ok(student);
         }
 
