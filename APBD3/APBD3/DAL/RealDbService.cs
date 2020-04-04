@@ -67,11 +67,11 @@ namespace APBD3.DAL
                 student.BirthDate = DateTime.Parse(reader["BirthDate"].ToString());
                 student.Semester = int.Parse(reader["Semester"].ToString());
                 student.Studies = reader["Name"].ToString();
-            
-                
                 
             }
             return student;
         }
+
+        
     }
 }

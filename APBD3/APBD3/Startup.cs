@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APBD3.DAL;
+using APBD3.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,7 @@ namespace APBD3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IDbService, RealDbService>();
+            services.AddSingleton<IStudentsDbService, StudentsDbService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
