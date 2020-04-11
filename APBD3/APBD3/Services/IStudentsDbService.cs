@@ -11,6 +11,7 @@ namespace APBD3.Services
     {
         Enrollment AddStudent(StudentEnrollmentRequest request);
         Enrollment PromoteStudents(PromotionRequest request);
+        bool ExistsStudent(string index);
         //int GetStudiesId(string name, SqlCommand command);
         //int GetEnrollmentId(int studiesId);
     }

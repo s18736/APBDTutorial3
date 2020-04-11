@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APBD3.DAL;
+using APBD3.Middlewares;
 using APBD3.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +19,7 @@ namespace APBD3
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,7 +36,7 @@ namespace APBD3
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IStudentsDbService dbService)
         {
             if (env.IsDevelopment())
             {
@@ -46,7 +49,38 @@ namespace APBD3
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+
+            app.Use(async (context, next) =>
+            {
+                if (!context.Request.Headers.ContainsKey("Index"))
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    await context.Response.WriteAsync("No index found in headers!");
+                    return;
+                }
+                else
+                {
+                    var index = context.Request.Headers["Index"].ToString();
+                    var existsStudent = dbService.ExistsStudent(index);
+                    if (!existsStudent)
+                    {
+                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                        await context.Response.WriteAsync("Index does not exist!");
+                        return;
+                    }
+                    await next();
+                }
+            });
+            app.UseMiddleware<LoggingMiddleware>();
+
+            app.UseRouting();
+
+            //app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

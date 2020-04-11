@@ -1,0 +1,313 @@
+1. POST
+2. /api/enrollments
+3. Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream
+4. 
+1. POST
+2. /api/enrollments
+3. Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream
+4. 
+1. POST
+2. /api/enrollments
+3. Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream
+4. 
+1. POST
+2. /api/enrollments
+3. Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments
+3. {
+	"IndexNumber": "23423",
+	"FirstName": "Andrzej",
+	"LastName": "Bebzol",
+	"BirthDate": "20.12.2001",
+	"Studies": "Computer Science"
+}
+4. 
+1. POST
+2. /api/enrollments/promotions
+3. {
+	"Semester": 1,
+	"Studies": "Computer Science"
+}
+4. 

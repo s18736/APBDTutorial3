@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace APBD3.Services
 {
@@ -15,30 +13,29 @@ namespace APBD3.Services
 
         public Enrollment AddStudent(StudentEnrollmentRequest request)
         {
-            using (var connection = new SqlConnection(_databaseString))
+            
+            using var connection = new SqlConnection(_databaseString);
+            connection.Open();
+            var transaction = connection.BeginTransaction();
+
+            var studiesId = getStudiesId(request.Studies, connection, transaction);
+            if (studiesId == -1)
             {
-                connection.Open();
-                var transaction = connection.BeginTransaction();
-                
-                var studiesId = getStudiesId(request.Studies, connection, transaction);
-                if (studiesId == -1)
-                {
-                    return null;
-                }
-               
-                var enrollmentId = getEnrollmentId(studiesId, connection, transaction);
-
-                if (isIndexNumberOccupied(connection, transaction, request.IndexNumber))
-                {
-                    return null;
-                }
-
-                insertStudent(connection, transaction, request, enrollmentId);
-                var enrollment = new Enrollment();
-                enrollment.Semester = 1;
-                enrollment.Studies = request.Studies;
-                return enrollment;
+                return null;
             }
+
+            var enrollmentId = getEnrollmentId(studiesId, connection, transaction);
+
+            if (isIndexNumberOccupied(connection, transaction, request.IndexNumber))
+            {
+                return null;
+            }
+
+            insertStudent(connection, transaction, request, enrollmentId);
+            var enrollment = new Enrollment();
+            enrollment.Semester = 1;
+            enrollment.Studies = request.Studies;
+            return enrollment;
         }
 
         private void insertStudent(SqlConnection connection, SqlTransaction transaction, StudentEnrollmentRequest request, int idEnrollment)
@@ -236,5 +233,21 @@ namespace APBD3.Services
             }
         }
 
+        public bool ExistsStudent(string index)
+        {
+            using (var connection = new SqlConnection(_databaseString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                var transaction = connection.BeginTransaction();
+                bindCommand(connection, command, transaction);
+                command.CommandText = "SELECT IndexNumber FROM Student WHERE IndexNumber = @Index";
+                command.Parameters.AddWithValue("Index", index);
+                var reader = command.ExecuteReader();
+                var exists = reader.Read();
+                reader.Close();
+                return exists;
+            }
+        }
     }
 }
