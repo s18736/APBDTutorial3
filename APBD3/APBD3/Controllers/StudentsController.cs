@@ -21,7 +21,9 @@ namespace APBD3.Controllers
             _dbService = dbService;
         }
 
-        [HttpGet]
+        
+
+    [HttpGet]
         public IActionResult getStudents(string orderBy)
         {
             return Ok(_dbService.GetStudents());

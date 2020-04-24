@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using APBD3.Models;
 using APBD3.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,7 @@ namespace APBD3.Controllers
         }
 
         [Route("promotions")]
+        [Authorize(Roles = "employee")]
         [HttpPost]
         public ActionResult promoteStudents([FromBody] PromotionRequest request)
         {
@@ -33,6 +35,7 @@ namespace APBD3.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "employee")]
         public ActionResult enrollStudent([FromBody] StudentEnrollmentRequest request)
         {
             if (!isRequestValid(request))

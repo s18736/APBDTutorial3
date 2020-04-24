@@ -311,3 +311,294 @@
 	"Studies": "Computer Science"
 }
 4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. GET
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. {
+	"location":{
+		"row": 10,
+		"col": 0
+	},
+	"place": 2,
+	"building": 4
+}
+4. 
+1. POST
+2. /api/students/login
+3. 
+4. 
+1. POST
+2. /api/students/login
+3. 
+4. 
+1. POST
+2. /login
+3. 
+4. 
+1. POST
+2. /api/students/login
+3. 
+4. 
+1. POST
+2. /api/students/login
+3. 
+4. 
+1. GET
+2. /api/students/login
+3. 
+4. 
+1. POST
+2. /api/students/login
+3. 
+4. 
+1. POST
+2. /api/students/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. GET
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 
+1. POST
+2. /api/login
+3. 
+4. 

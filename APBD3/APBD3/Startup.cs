@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using APBD3.DAL;
 using APBD3.Middlewares;
 using APBD3.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace APBD3
 {
@@ -33,6 +36,20 @@ namespace APBD3
             services.AddSingleton<IDbService, RealDbService>();
             services.AddSingleton<IStudentsDbService, StudentsDbService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                   .AddJwtBearer(options =>
+                   {
+                       options.TokenValidationParameters = new TokenValidationParameters
+                       {
+                           ValidateAudience = false,
+                           ValidateIssuer = false,
+                           ValidIssuer = "Maciek",
+                           ValidateLifetime = true,
+                           IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SecrecikSecrecikSecrecikSecrecikKrecik"))
+                       };
+                   });
+            services.AddControllers()
+                .AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,32 +67,10 @@ namespace APBD3
 
             app.UseHttpsRedirection();
 
-            app.Use(async (context, next) =>
-            {
-                if (!context.Request.Headers.ContainsKey("Index"))
-                {
-                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                    await context.Response.WriteAsync("No index found in headers!");
-                    return;
-                }
-                else
-                {
-                    var index = context.Request.Headers["Index"].ToString();
-                    var existsStudent = dbService.ExistsStudent(index);
-                    if (!existsStudent)
-                    {
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        await context.Response.WriteAsync("Index does not exist!");
-                        return;
-                    }
-                    await next();
-                }
-            });
-            app.UseMiddleware<LoggingMiddleware>();
-
             app.UseRouting();
 
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

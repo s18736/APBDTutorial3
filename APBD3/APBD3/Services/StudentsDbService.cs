@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace APBD3.Services
 {
@@ -10,6 +11,35 @@ namespace APBD3.Services
     {
         private static readonly string _databaseString = "Data Source=db-mssql;Initial Catalog=s18736;Integrated Security=True";
         //adding student
+
+        public bool canLogIn(LoginModel model)
+        {
+            using (var connection = new SqlConnection(_databaseString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                var transaction = connection.BeginTransaction();
+                command.Transaction = transaction;
+                command.CommandText = "SELECT IndexNumber, Password FROM Student " +
+                    "WHERE Student.IndexNumber = @Index AND Student.Password = @Password";
+                command.Parameters.AddWithValue("Index", model.Index);
+                command.Parameters.AddWithValue("Password", model.Password);
+                var reader = command.ExecuteReader();
+                try
+                {
+                    if (reader.Read())
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                finally
+                {
+                    reader.Close();
+                }
+            }
+        }
 
         public Enrollment AddStudent(StudentEnrollmentRequest request)
         {
