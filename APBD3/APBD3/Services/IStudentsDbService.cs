@@ -1,4 +1,5 @@
-﻿using APBD3.Models;
+﻿using APBD3.Entities;
+using APBD3.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -9,8 +10,15 @@ namespace APBD3.Services
 {
     public interface IStudentsDbService
     {
-        Enrollment AddStudent(StudentEnrollmentRequest request);
-        Enrollment PromoteStudents(PromotionRequest request);
+        List<StudentResponse> GetStudents();
+
+        bool AddStudent(Entities.Student student);
+
+        bool RemoveStudent(string id);
+
+        Student UpdateStudent(Student student);
+        Models.Enrollment EnrollStudent(StudentEnrollmentRequest request);
+        Models.Enrollment PromoteStudents(PromotionRequest request);
         bool ExistsStudent(string index);
 
         bool canLogIn(LoginModel model);

@@ -1,4 +1,5 @@
-﻿using APBD3.Models;
+﻿using APBD3.Entities;
+using APBD3.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -41,7 +42,7 @@ namespace APBD3.Services
             }
         }
 
-        public Enrollment AddStudent(StudentEnrollmentRequest request)
+        public Models.Enrollment EnrollStudent(StudentEnrollmentRequest request)
         {
             
             using var connection = new SqlConnection(_databaseString);
@@ -62,7 +63,7 @@ namespace APBD3.Services
             }
 
             insertStudent(connection, transaction, request, enrollmentId);
-            var enrollment = new Enrollment();
+            var enrollment = new Models.Enrollment();
             enrollment.Semester = 1;
             enrollment.Studies = request.Studies;
             return enrollment;
@@ -205,7 +206,7 @@ namespace APBD3.Services
         //PROMOTING STUDENTS
 
 
-        public Enrollment PromoteStudents(PromotionRequest request)
+        public Models.Enrollment PromoteStudents(PromotionRequest request)
         {
             using (var connection = new SqlConnection(_databaseString))
             {
@@ -217,7 +218,7 @@ namespace APBD3.Services
                     return null;
                 }
                 promote(connection, transaction, request.Studies, request.Semester);
-                Enrollment enrollment = new Enrollment();
+                Models.Enrollment enrollment = new Models.Enrollment();
                 enrollment.Studies = request.Studies;
                 enrollment.Semester = request.Semester + 1;
                 return enrollment;
@@ -278,6 +279,26 @@ namespace APBD3.Services
                 reader.Close();
                 return exists;
             }
+        }
+
+        public List<StudentResponse> GetStudents()
+        {
+            return null;
+        }
+
+        public bool AddStudent(Student student)
+        {
+            return false;
+        }
+
+        public bool RemoveStudent(string id)
+        {
+            return false;
+        }
+
+        public Student UpdateStudent(Student student)
+        {
+            return null;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace APBD3.DAL
 {
     public interface IDbService
     {
-        IEnumerable<Student> GetStudents();
-        Student GetStudent(string id);
+        IEnumerable<StudentResponse> GetStudents();
+        StudentResponse GetStudent(string id);
     }
 }

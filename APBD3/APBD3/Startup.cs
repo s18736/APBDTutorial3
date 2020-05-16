@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using APBD3.DAL;
+using APBD3.Entities;
 using APBD3.Middlewares;
 using APBD3.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,6 +13,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -33,27 +35,17 @@ namespace APBD3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddSingleton<IDbService, RealDbService>();
-            services.AddSingleton<IStudentsDbService, StudentsDbService>();
+            services.AddScoped<IStudentsDbService, StudentsORMService>();
+            services.AddDbContext<StudentsContext>(o => { o.UseSqlServer(Configuration["ConnectionStrings:DefaultConnectionString"]); });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                   .AddJwtBearer(options =>
-                   {
-                       options.TokenValidationParameters = new TokenValidationParameters
-                       {
-                           ValidateAudience = false,
-                           ValidateIssuer = false,
-                           ValidIssuer = "Maciek",
-                           ValidateLifetime = true,
-                           IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SecrecikSecrecikSecrecikSecrecikKrecik"))
-                       };
-                   });
             services.AddControllers()
                 .AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IStudentsDbService dbService)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

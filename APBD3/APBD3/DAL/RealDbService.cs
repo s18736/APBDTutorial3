@@ -9,9 +9,9 @@ namespace APBD3.DAL
 {
     public class RealDbService : IDbService
     {
-        public IEnumerable<Student> GetStudents()
+        public IEnumerable<StudentResponse> GetStudents()
         {
-            List<Student> students = new List<Student>();
+            List<StudentResponse> students = new List<StudentResponse>();
             using (var sqlClient = new SqlConnection("Data Source=db-mssql;Initial Catalog=s18736;Integrated Security=True"))
             using (var sqlCommand = new SqlCommand())
             {
@@ -26,7 +26,7 @@ namespace APBD3.DAL
 
                 while (reader.Read())
                 {
-                    var student = new Student();
+                    var student = new StudentResponse();
                     student.FirstName = reader["FirstName"].ToString();
                     student.LastName = reader["LastName"].ToString();
                     student.BirthDate = DateTime.Parse(reader["BirthDate"].ToString());
@@ -39,9 +39,9 @@ namespace APBD3.DAL
             return students;
         }
 
-        public Student GetStudent(string id)
+        public StudentResponse GetStudent(string id)
         {
-            var student = new Student();
+            var student = new StudentResponse();
             using (var sqlClient = new SqlConnection("Data Source=db-mssql;Initial Catalog=s18736;Integrated Security=True"))
             using (var sqlCommand = new SqlCommand())
             {

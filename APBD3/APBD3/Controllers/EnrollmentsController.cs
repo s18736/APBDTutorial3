@@ -22,9 +22,8 @@ namespace APBD3.Controllers
         }
 
         [Route("promotions")]
-        [Authorize(Roles = "employee")]
         [HttpPost]
-        public ActionResult promoteStudents([FromBody] PromotionRequest request)
+        public ActionResult PromoteStudents([FromBody] PromotionRequest request)
         {
             var enrollment = _service.PromoteStudents(request);
             if (enrollment == null)
@@ -35,14 +34,13 @@ namespace APBD3.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "employee")]
-        public ActionResult enrollStudent([FromBody] StudentEnrollmentRequest request)
+        public ActionResult EnrollStudent([FromBody] StudentEnrollmentRequest request)
         {
             if (!isRequestValid(request))
             {
                 return BadRequest("Request is wrong!");
             }
-            var enrollment = _service.AddStudent(request);
+            var enrollment = _service.EnrollStudent(request);
             if (enrollment == null)
             {
                 return BadRequest("Wrong input data!");
